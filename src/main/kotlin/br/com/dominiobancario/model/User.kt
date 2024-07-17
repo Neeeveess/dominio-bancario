@@ -16,9 +16,9 @@ data class User(
     val card: Card,
 
     @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
-    val feature: List<Feature>,
+    var features: List<Feature>,
 
     @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
-    val news: List<News>,
+    var news: List<News>
 
 )

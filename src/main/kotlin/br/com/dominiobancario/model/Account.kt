@@ -16,12 +16,11 @@ data class Account(
     @Column(unique = true)
     val number: String,
 
-
     val agency: String,
 
-    @Column( scale = 13, precision = 2)
+    @Column( precision = 13, scale = 2 )
     val balance: BigDecimal,
 
-    @Column(name = "additional_limit", scale = 13, precision = 2)
+    @Column(name = "additional_limit", precision = 13, scale = 2)
     val limit: BigDecimal
 )
