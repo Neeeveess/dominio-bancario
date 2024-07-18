@@ -4,6 +4,9 @@ plugins {
     kotlin("plugin.jpa") version "1.9.24"
     kotlin("jvm") version "1.9.24"
     kotlin("plugin.spring") version "1.9.24"
+
+    id("com.github.johnrengelman.shadow") version "7.+"
+    application
 }
 
 group = "br.com.dominiobancario"
@@ -45,3 +48,8 @@ task("stage") {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
+
+application {
+    mainClass.set("DominioBancarioApplication")
+}
+
