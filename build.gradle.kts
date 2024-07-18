@@ -41,7 +41,7 @@ kotlin {
     }
 }
 
-tasks.named("bootDistZip").configure {
+tasks.named("bootStartScripts").configure {
     dependsOn("shadowJar")
 }
 
