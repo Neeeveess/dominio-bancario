@@ -41,7 +41,7 @@ kotlin {
     }
 }
 
-task("stage") {
+tasks.named("bootDistZip").configure {
     dependsOn("shadowJar")
 }
 
