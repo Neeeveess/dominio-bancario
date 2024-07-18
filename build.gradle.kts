@@ -4,9 +4,6 @@ plugins {
     kotlin("plugin.jpa") version "1.9.24"
     kotlin("jvm") version "1.9.24"
     kotlin("plugin.spring") version "1.9.24"
-
-    id("com.github.johnrengelman.shadow") version "7.+"
-    application
 }
 
 group = "br.com.dominiobancario"
@@ -35,27 +32,17 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
+tasks.named<Jar>("jar") {
+    enabled = false
+}
+
 kotlin {
     compilerOptions {
         freeCompilerArgs.addAll("-Xjsr305=strict")
     }
 }
 
-tasks.named("bootStartScripts").configure {
-    dependsOn("shadowJar")
-}
 
 tasks.withType<Test> {
     useJUnitPlatform()
-}
-
-application {
-    mainClass.set("br.com.dominiobancario.DominioBancarioApplication")
-}
-
-tasks.shadowJar {
-    archiveClassifier.set("")
-    manifest {
-        attributes["Main-Class"] = "br.com.dominiobancario.DominioBancarioApplication"
-    }
 }
