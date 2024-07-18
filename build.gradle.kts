@@ -50,6 +50,12 @@ tasks.withType<Test> {
 }
 
 application {
-    mainClass.set("DominioBancarioApplication")
+    mainClass.set("br.com.dominiobancario.DominioBancarioApplication")
 }
 
+tasks.shadowJar {
+    archiveClassifier.set("")
+    manifest {
+        attributes["Main-Class"] = "br.com.dominiobancario.DominioBancarioApplication"
+    }
+}
