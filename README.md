@@ -3,7 +3,7 @@
 **Projeto feito com Kotlin no Java 21 e Spring Framework 3.3.1**
 
 ## Sobre o Projeto
-Este projeto é uma API de RESTful desenvolvida em Kotlin, ele foi feito para aplicar conceitos aprendidos com Kotlin.
+Este projeto é uma API de RESTful desenvolvida em Kotlin, ele foi feito para aplicar conceitos aprendidos com Kotlin e publicá-lo na nuvem utilizando o Railway.
 
 ## Diagrama de Classes
 
@@ -53,6 +53,7 @@ classDiagram
 - Spring Data JPA
 - H2 Database
 - PostgreSQL
+- Swagger
 
 ## Iniciando projeto
 Para iniciar a aplicação execute a seguinte ação na pasta do projeto
