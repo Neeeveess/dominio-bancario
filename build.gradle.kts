@@ -38,10 +38,8 @@ kotlin {
     }
 }
 
-tasks.jar{
-    manifest{
-        attributes["Main-Class"] = "br.com.dominiobancario.DominioBancarioApplication"
-    }
+task("stage") {
+    dependsOn("shadowJar")
 }
 
 tasks.withType<Test> {
